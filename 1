@@ -1,0 +1,26 @@
+#include <iostream>
+
+void main() {
+setlocale(LC_ALL, "Russian");
+
+int a,f=1;
+cout << (/n"Введите целое число:");
+cin >> a;
+if (a % 1 != 0) {
+cout << (/n"Ошибка введено не целое число!");
+return 0;
+}
+if (a % 2 == 0) {
+cout << (/n "Введено четное ");
+} else {
+cout << (/n "Введено не четное ");
+}
+for (int i = 2; i<a; i++) {
+if (a % i == 0) { f=0; break;}
+if (f) {
+cout << ( " простое число");
+} else {
+cout << ( " составное число");
+}
+system("pause");
+}
