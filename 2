@@ -19,12 +19,20 @@ int NOK(int n1, int n2)
 }
 int main() 
 {
+setlocale(LC_ALL, "Russian");
+
   int n1, n2;
-  cout << "n1=";
+  cout << ("Программа вычисляет и выводит на экран НОК и НОД двух целых чисел");
+  cout << (\n "Введите первое целое число:");
   cin >> n1;
-  cout << "n2=";
+  cout << (\n "Введите второе целое число:");
   cin >> n2;
-  cout << NOK(n1, n2);
-  cin.get(); cin.get();
+  if (n1 % 1 != 0, n2 % 1 !=0) {
+  cout << (\n "Ошибка! Введены не целые числа");
+  } else {
+  cout << (\n"НОК: ") << NOK(n1, n2);
+  cout << (\n"НОД: ") << NOD(n1, n2);
+  }
   return 0;
+  system("pause");
 }
