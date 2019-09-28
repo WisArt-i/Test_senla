@@ -1,0 +1,33 @@
+#include <iostream>
+unsigned getReverse(unsigned n) {
+    unsigned r = n%10;
+    while (n/=10) {
+        r = r*10 + n%10;
+    }
+    return r;
+} 
+bool isPalindrom(const unsigned n) {
+    return n == getReverse(n);
+}
+int main()
+{
+setlocale(LC_ALL, "Russian");
+int a,s[];
+cout << ("/nВведите длинну последовательности (до 100):") << endl;
+cin >> a;
+if (a==0 || a > 100 || a %1 != 0) {
+cout ("Введено не корректное значение");
+return 1;
+}
+cout << ("\nВведите последовательность чисел");
+for (int i=0; i<a; i++) {
+cin >> s[i];
+}
+for (int i=0; i<a; i++) {
+  if (isPalindrom(s[i])) {
+    cout << endl << s[i] << (" - палиндром);
+  }
+}
+return 1;
+system("pause");
+}
