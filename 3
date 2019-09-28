@@ -6,7 +6,7 @@ int main()
 setlocale(LC_ALL, "Russian");
 char s[],f[];
 int slovo, count = 0, buf;
-cout << ("Введите предложение:") << endl;
+cout << ("/nВведите предложение:") << endl;
 cin.get(s);
   int i = 0, j;
   while (s[i] == ' ' && s[i] != '\0')
@@ -22,7 +22,7 @@ cin.get(s);
       slovo = 0;
     i++;
   }
-  cout << "Количество слов в строке " << count;
+  cout << ("/nКоличество слов в строке ") << count;
   for (j = 0; j < count-1; j++) {
     for (i = j+1; i < count-1; i++) {
     int a=i,b=j;
@@ -46,3 +46,4 @@ for (i = 0; f[i] != '\0'; i++) {
 }
  cin.get(); cin.get();
   return 0;
+}
