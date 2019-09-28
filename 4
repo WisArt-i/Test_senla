@@ -5,16 +5,16 @@ int main()
 {
 setlocale(LC_ALL, "Russian");
 char s[],f[],ctr = 0;
-cout << ("Введите предложение:") << endl;
+cout << ("\nВведите предложение:") << endl;
 cin.get(s);
-cout << ("Введите слово для поиска:") << endl;
+cout << ("\nВведите слово для поиска:") << endl;
 cin.get(f);
 char *buf = strtok(s, " ,.");
 while (buf != NULL) {
 if (strcmp(buf, f) == 0) { ctr++}; 
 buf = strtok (NULL, " ,.");
 }
-cout << ("/n Слово употребляется ") << ctr << (" раз");
+cout << ("\n Слово употребляется ") << ctr << (" раз");
  cin.get(); cin.get();
   return 0;
 }
