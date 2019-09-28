@@ -1,7 +1,7 @@
 #include <iostream>
 void main() {
 setlocale(LC_ALL, "Russian");
-int wmax = 0,n=0, m[][];
+int wmax = 0,n=0, m[][],buf[3],t=0,sum=0,c=0;
 cout << ("\nПрограмма наполняет рюкзак вещами на максимальную стоимость");
 cout << ("\nВведите грузоподьемность рюкзака");
 cin >> wmax;
@@ -12,10 +12,37 @@ if (n == 0 || n % 1 !=0) {
   return 1;
   system("pause");
 }
-for (int i; i<n; i++) {
+for (int i=0; i<n; i++) {
   cout << ("\nВведите вес ") << i+1 << (" вещи");
   cin >> m[i][0];
   cout << ("\nВведите стоимость ") << i+1 << (" вещи");
   cin >> m[i][1];
   m[i][2] = m[i][1]/m[i][0];
+}
+for (int i=0; i<n-1; i++){
+  for (int j=i+1; j<n-1; j++){
+    if (m[i][2] < m[j][2]) {
+      buf[0] = m[i][0];
+      buf[1] = m[i][1];
+      buf[2] = m[i][2];
+      m[i][0] = m[j][0];
+      m[i][1] = m[j][1];
+      m[i][2] = m[j][2];
+      m[j][0] = buf[0];
+      m[j][1] = buf[1];
+      m[j][2] = buf[2];
+    }
+  }
+}
+for (int i =0; i<n; i++) {
+  if ((t+m[i][0])<wmax) {
+    t+=m[i][0];
+    sum+=m[i][1];
+    cout << ("\nВ сумку вешь:") << m[i][0] << (" ") << m[i][1];
+    c++;
+  }
+}
+cout << ("\nВсего в сумке вещей: ") << c << (" на сумму: ") << sum << (". Общая масса составила: ") << t;  
+return 1;
+system("pause");
 }
